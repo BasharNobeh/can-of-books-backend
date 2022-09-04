@@ -1,16 +1,63 @@
-# Start your own "Can of Books" App
+# Project Name
 
-This repository has starter code to begin work on creating your own online bookshelf.
-And this is the server which is connected with the dataBase that contains the books . 
-The server can also create , add ,remove data from the dataBase .
+**Author**: Bashar Nobeh , Yazan Alfarra
+**Version**: 1.0.0
 
-## What can books do?
+## Overview
+This server is connected to a mongoDB that contains data of books and it also have the ability to change , edit ,add remove data .
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+## Getting Started
+-Create the server 
+- connect it with the database 
+- Create the react application 
+- Have a contact between the server and the app (request and response ) using the routs 
+-use the res data to view it on the app 
 
-## Use this template
+## Architecture
+![image](Week_3.png)
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+## Change Log
 
 
-Here is a sneak peek about how this project works with the application 
+09-04-2022 5:00pm - Application now has a fully-functional express server, with a Books route for the location resource.
+09-04-2022 6:00pm - Data is now availabe in the application and its saved into a state .
+09-04-2022 6:20pm - The broweser contains the data of the best books .
+
+## Estimates
+Name of feature: ___MongoDB_____________________________
+
+Estimate of time needed to complete: _20 mins____
+
+Start time: _5:20____
+
+Finish time: _5:40____
+
+Actual time needed to complete: _20mins____
+
+
+Name of feature: _server sending data to the db_______________________
+________
+
+Estimate of time needed to complete: _30 mins____
+
+Start time: _5:40____
+
+Finish time: __6:10___
+
+Actual time needed to complete: _30 mins____
+
+
+Name of feature: __rendering the data into the browser______________________________
+
+Estimate of time needed to complete: _30 mins____
+
+Start time: _6:20____
+
+Finish time: _6:50____
+
+Actual time needed to complete: _30 mins____
+
+## Credit and Collaborations
+Yazan Alfarra
+https://github.com/yazanismail1
+
