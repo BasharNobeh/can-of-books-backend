@@ -1,6 +1,8 @@
 # Start your own "Can of Books" App
 
 This repository has starter code to begin work on creating your own online bookshelf.
+And this is the server which is connected with the dataBase that contains the books . 
+The server can also create , add ,remove data from the dataBase .
 
 ## What can books do?
 
@@ -9,3 +11,6 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 ## Use this template
 
 Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+
+
+Here is a sneak peek about how this project works with the application 
