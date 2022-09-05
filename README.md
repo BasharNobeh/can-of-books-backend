@@ -14,7 +14,7 @@ This server is connected to a mongoDB that contains data of books and it also ha
 -use the res data to view it on the app 
 
 ## Architecture
-![image](Week_3.png)
+![image](Week_3_1.png)
 
 ## Change Log
 
@@ -27,7 +27,10 @@ This server is connected to a mongoDB that contains data of books and it also ha
 
 09-04-2022 5:00pm - Application now has a fully-functional express server, with a Books route for the location resource.
 09-04-2022 6:00pm - Data is now availabe in the application and its saved into a state .
-09-04-2022 6:20pm - The broweser contains the data of the best books .
+09-04-2022 6:20pm - The browser contains the data of the best books .
+10-04-2022 10:20pm - The user can now add a new Book .
+10-04-2022 11:00pm - The user can now delete an old Book.
+
 
 
 
@@ -66,6 +69,26 @@ Estimate of time needed to complete: _30 mins____
 Start time: _6:20____
 
 Finish time: _6:50____
+
+Actual time needed to complete: _30 mins____
+
+Name of feature: __rendering the data into the browser__Client adding a new book____________________________
+
+Estimate of time needed to complete: _30 mins____
+
+Start time: _10:20____
+
+Finish time: _10:50____
+
+Actual time needed to complete: _30 mins____
+
+Name of feature: __rendering the data into the browser____Client deleting an old book__________________________
+
+Estimate of time needed to complete: _30 mins____
+
+Start time: _11:00____
+
+Finish time: _11:30____
 
 Actual time needed to complete: _30 mins____
 
