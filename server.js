@@ -8,9 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
+
+
+
+
 const PORT = process.env.PORT || 3001;
 
-mongoose.connect('mongodb://localhost:27017/books' , {useNewUrlParser :true,
+mongoose.connect("mongodb://bashar:1234@ac-ggkliub-shard-00-00.mvy9loq.mongodb.net:27017,ac-ggkliub-shard-00-01.mvy9loq.mongodb.net:27017,ac-ggkliub-shard-00-02.mvy9loq.mongodb.net:27017/?ssl=true&replicaSet=atlas-inm56x-shard-0&authSource=admin&retryWrites=true&w=majority", {useNewUrlParser :true,
 useUnifiedTopology:true });
 
 
