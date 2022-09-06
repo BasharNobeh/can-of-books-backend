@@ -66,10 +66,14 @@ const secondBook = new Book({
 //New Adds
 
 
-
+//Routes 
 app.post('/addBook',addBookHandler);
 app.delete('/deleteBook/:id',deleteBookHandler);
 app.get('/Books', getTheBestBooks );
+app.put('/updateBook/:id',updateBookHandler)
+
+
+
 function getTheBestBooks(req,res){
   Book.find({},(err,result) =>{
     if(err){
@@ -125,6 +129,39 @@ function deleteBookHandler(req,res) {
 
 }
 
+async function updateBookHandler(req,res) {
+  console.log("done")
+  const BookId = req.params.id;
+  const {title,description,states} = req.body;
+Book.findByIdAndUpdate(BookId,{title,description,states},(err,result)=>{
+  Book.find({},(err,result) =>{
+    if(err){
+      console.log(err)
+    }
+    else 
+    {
+      res.send(result)
+    }
+  })
+})
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -136,16 +173,6 @@ app.get('/', (request, response) => {
   response.send('test request received')
 
 })
-
-
-
-
-
-
-
-
-
-
 
 
 
