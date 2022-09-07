@@ -23,6 +23,7 @@ const bookSchema = new mongoose.Schema({
   title: String,
   description:String,
   states:String,
+  name: String
 });
 
 const Book = mongoose.model('books', bookSchema);
@@ -32,28 +33,32 @@ async function seedData (){
 const firstBook = new Book({
 title : "In Search of Lost Time",
 description:"Swann's Way, the first part of A la recherche de temps perdu, Marcel Proust's seven-part cycle, was published in 1913. In it, Proust introduces the themes that run through the entire work",
-states:"Available"
+states:"Available",
+name : "Admin@gmail.com"
 
 
 })
 const secondBook = new Book({
   title : "Ulysses",
   description:"Ulysses chronicles the passage of Leopold Bloom through Dublin during an ordinary day, June 16, 1904. The title parallels and alludes to Odysseus (Latinised into Ulysses).",
-  states:"Available"
+  states:"Available",
+  name : "Admin@gmail.com"
   
   
   })
   const thirdBook = new Book({
     title : "Don Quixote",
     description:"Alonso Quixano, a retired country gentleman in his fifties, lives in an unnamed section of La Mancha with his niece and a housekeeper. He has become obsessed with books of chivalry.",
-    states:"Available"
+    states:"Available",
+    name : "Admin@gmail.com"
     
     
     })
     const fourthBook = new Book({
       title : "One Hundred Years of Solitude",
       description:"One of the 20th century's enduring works, One Hundred Years of Solitude is a widely beloved and acclaimed novel known throughout the world, and the ultimate achievement in a Nobel Prize–winning car...",
-      states:"Available"
+      states:"Available",
+      name : "Admin@gmail.com"
       
       
       })
@@ -75,7 +80,9 @@ app.put('/updateBook/:id',updateBookHandler)
 
 
 function getTheBestBooks(req,res){
-  Book.find({},(err,result) =>{
+  const name = req.query.name;
+
+  Book.find({name:name},(err,result) =>{
     if(err){
       console.log(err)
     }
@@ -90,18 +97,19 @@ function getTheBestBooks(req,res){
 async function addBookHandler(req,res) {
   console.log(req.body);
   
-  const {title,description,states} = req.body;
+  const {title,description,states,name} = req.body;
   console.log(title);
   console.log(description);
   console.log(states); //finding the element in the console just to test 
   await Book.create({
     title : title,
       description : description,
-      states:states
+      states:states,
+      name:name
 
   });
 
-  Book.find({},(err,result) =>{
+  Book.find({name:name},(err,result) =>{
     if(err){
       console.log(err)
     }
@@ -114,8 +122,9 @@ async function addBookHandler(req,res) {
 // to handle the delete button 
 function deleteBookHandler(req,res) {
   const BookId = req.params.id;
+  const name = req.query.name;
   Book.deleteOne({_id:BookId},(err,result)=>{
-    Book.find({},(err,result) =>{
+    Book.find({name:name},(err,result) =>{
       if(err){
         console.log(err)
       }
@@ -130,11 +139,12 @@ function deleteBookHandler(req,res) {
 }
 
 async function updateBookHandler(req,res) {
+  
   console.log("done")
   const BookId = req.params.id;
-  const {title,description,states} = req.body;
-Book.findByIdAndUpdate(BookId,{title,description,states},(err,result)=>{
-  Book.find({},(err,result) =>{
+  const {title,description,states,name} = req.body;
+Book.findByIdAndUpdate(BookId,{title,description,states,name},(err,result)=>{
+  Book.find({name:name},(err,result) =>{
     if(err){
       console.log(err)
     }
